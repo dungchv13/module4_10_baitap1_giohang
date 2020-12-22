@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<h1>DANH SACH SAN PHAM</h1>
+<a href="/products/cartasd"><h1>CART</h1></a>
+<th:block th:each="p : ${products}">
+    <a th:href="@{/products/{id}(id = ${p.id})}">
+    <div style="float: left" >
+    <img th:src="${p.img}" th:alt="${p.name}"style="height: 200px;width: 300px">
+    <br>
+    <br>
+    <span th:text="'Ten san pham :'+${p.name}"></span>
+    <br>
+    <br>
+    <span th:text="'Gia ca :'+${p.price}+' $'"></span>
+    </div>
+    </a>
+</th:block>
+</body>
+</html>

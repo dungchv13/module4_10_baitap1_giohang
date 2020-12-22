@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Info</title>
+</head>
+<body>
+<div>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td th:text="${product.name}"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td th:text="${product.price}"></td>
+        </tr>
+        <tr>
+            <td>Provider</td>
+            <td th:text="${product.provider}"></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td th:text="${product.quantity}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><img th:src="${product.img}" th:alt="${product.name}"style="height: 200px;width: 300px"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <a th:href="@{/products/cart/{id}(id = ${product.id})}">Them vao gio hang</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/products/home"><h1>back to home</h1></a>
+</div>
+</body>
+</html>
